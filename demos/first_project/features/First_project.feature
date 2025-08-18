@@ -4,8 +4,8 @@ Feature: Mon ppremier projet BDD
 
     Scenario: test de mon permier scénario 
 
-        Given J'ouvre mon terminal
-        When Je me déplace dans le répertoire C:\Users\andre
-        And J'affiche le contenu avec 'ls -la'
+        Given J'ouvre mon terminal "Powershell"
+        When Je me déplace dans le répertoire "C:\Users\andre"
+        And J'affiche le contenu avec "dir"
         And Je regarde le contenu du répertoire
         Then je ferme le répertoire

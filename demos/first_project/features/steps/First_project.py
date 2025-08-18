@@ -17,32 +17,32 @@ file_handler.setFormatter(formatter)
 # Ajout du handler au logger
 logger.addHandler(file_handler)
 
-@given("J'ouvre mon terminal")
-def open_terminal(context):
-    print("j'ouvre mon terminal")
-    logger.info("j'ouvre mon terminal")
+@given("J'ouvre mon terminal {shell}")
+def open_terminal(context, shell):
+    print(f"P: j'ouvre mon terminal {shell}")
+    logger.info(f"j'ouvre mon terminal {shell}")
     time.sleep(2)
 
-@when("Je me déplace dans le répertoire C:\\Users\\andre")
-def deplace_dans_repertoire(context):
-    print("Je me déplace dans le répertoire C:\\Users\\andre")
-    logger.info("Je me déplace dans le répertoire C:\\Users\\andre")
+@when("Je me déplace dans le répertoire {path}")
+def deplace_dans_repertoire(context, path):
+    print(f"P: Je me déplace dans le répertoire {path}")
+    logger.info(f"Je me déplace dans le répertoire {path}")
     time.sleep(2)
 
-@when("J'affiche le contenu avec 'ls -la'")
-def affiche_contenu(context):
-    print("J'affiche le contenu avec 'ls -la'")
-    logger.info("J'affiche le contenu avec 'ls -la'")
+@when("J'affiche le contenu avec {cmd}")
+def affiche_contenu(context, cmd):
+    print(f"P: J'affiche le contenu avec {cmd}")
+    logger.info(f"J'affiche le contenu avec {cmd}")
     time.sleep(2)
 
 @when("Je regarde le contenu du répertoire")
 def regarder_contenu_repertoire(context):
-    print("Je regarde le contenu du répertoire")
+    print("P: Je regarde le contenu du répertoire")
     logger.info("Je regarde le contenu du répertoire")
     time.sleep(2)
 
 @then("je ferme le répertoire")
 def ferme_repertoire(context):
-    print("je ferme le répertoire")
+    print("P: je ferme le répertoire")
     logger.info("je ferme le répertoire")
     time.sleep(2)
