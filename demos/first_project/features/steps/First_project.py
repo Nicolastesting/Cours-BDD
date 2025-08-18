@@ -1,6 +1,6 @@
 import time
 import logging
-from behave import given, when, then
+from behave import *
 
 # Création d'un logger pour enregistrer tous les évènements du programme
 logger = logging.getLogger("First_project")
@@ -33,6 +33,8 @@ def deplace_dans_repertoire(context, path):
 def affiche_contenu(context, cmd):
     print(f"P: J'affiche le contenu avec {cmd}")
     logger.info(f"J'affiche le contenu avec {cmd}")
+    for row in context.table:
+        logger.info(f"J'affiche la ligne {row['Type']} {row ['Nom']}")
     time.sleep(2)
 
 @when("Je regarde le contenu du répertoire")
